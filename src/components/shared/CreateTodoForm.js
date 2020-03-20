@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Paper, TextField, Typography, Divider, Button} from "@material-ui/core";
+import {TextField, Typography, Divider, Button, Card, CardContent} from "@material-ui/core";
 import {addTodo} from "../../redux/todo/todoActionCreators";
 
 function CreateTodoForm({dispatch}) {
@@ -37,64 +37,66 @@ function CreateTodoForm({dispatch}) {
 
     return (
         <div style={{
-            backgroundColor: "whitesmoke",
+            backgroundColor: "white",
             minHeight: "93vh",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center"
         }}>
-            <Paper style={{padding: 16}} elevation={4} variant="outlined">
-                <form onSubmit={handleTodoSubmit}>
-                    <Typography variant="overline" gutterBottom={true}>
-                        Make it count
-                    </Typography>
+            <Card style={{padding: 16}} elevation={2} variant="elevation" raised={true}>
+                <CardContent>
+                    <form onSubmit={handleTodoSubmit}>
+                        <Typography variant="overline" gutterBottom={true}>
+                            Make it count
+                        </Typography>
 
-                    <TextField
-                        error={titleError}
-                        margin="dense"
-                        helperText={error.title}
-                        variant="outlined"
-                        label="Title"
-                        value={todo.title}
-                        required={true}
-                        fullWidth={true}
-                        name="title"
-                        type="text"
-                        placeholder="Enter todo title"
-                        onChange={handleTodoChange}
-                    />
+                        <TextField
+                            error={titleError}
+                            margin="dense"
+                            helperText={error.title}
+                            variant="outlined"
+                            label="Title"
+                            value={todo.title}
+                            required={true}
+                            fullWidth={true}
+                            name="title"
+                            type="text"
+                            placeholder="Enter todo title"
+                            onChange={handleTodoChange}
+                        />
 
-                    <Divider variant="fullWidth" style={{marginTop: 8, marginBottom: 8}}/>
+                        <Divider variant="fullWidth" style={{marginTop: 8, marginBottom: 8}}/>
 
-                    <TextField
-                        error={descriptionError}
-                        margin="dense"
-                        helperText={error.description}
-                        variant="outlined"
-                        label="Description"
-                        value={todo.description}
-                        required={true}
-                        fullWidth={true}
-                        name="description"
-                        type="multiline"
-                        rows={5}
-                        multiline={true}
-                        size="medium"
-                        placeholder="Enter todo description"
-                        onChange={handleTodoChange}
-                    />
+                        <TextField
+                            error={descriptionError}
+                            margin="dense"
+                            helperText={error.description}
+                            variant="outlined"
+                            label="Description"
+                            value={todo.description}
+                            required={true}
+                            fullWidth={true}
+                            name="description"
+                            type="multiline"
+                            rows={5}
+                            multiline={true}
+                            size="medium"
+                            placeholder="Enter todo description"
+                            onChange={handleTodoChange}
+                        />
 
-                    <Divider style={{marginTop: 8, marginBottom: 8}}/>
+                        <Divider style={{marginTop: 8, marginBottom: 8}}/>
 
-                    <Button
-                        color="primary"
-                        onClick={handleTodoSubmit}
-                        variant="contained"
-                        fullWidth={true}
-                        size="small">Add Todo</Button>
-                </form>
-            </Paper>
+                        <Button
+                            color="primary"
+                            onClick={handleTodoSubmit}
+                            variant="contained"
+                            fullWidth={true}
+                            size="small">Add Todo</Button>
+                    </form>
+                </CardContent>
+            </Card>
         </div>
     )
 }

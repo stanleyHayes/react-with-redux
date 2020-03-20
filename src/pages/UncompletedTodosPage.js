@@ -18,35 +18,37 @@ function UncompletedTodosPages(props) {
 
     return (
         <Layout>
-            <Container>
-                {
-                    (todo.todos.length === 0) ?
-                        (
-                            <div
-                                style={{
-                                    backgroundColor: "whitesmoke",
-                                    minHeight: "93vh",
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    justifyContent: "center",
-                                    alignItems: "center"
-                                }}>
-                                <Typography variant="h4">
-                                    Don't waste your life.
-                                </Typography>
-                                <Button variant="text" size="large">
-                                    <Link to="/create">Create a todo</Link>
-                                </Button>
-                            </div>
-                        ) : (
-                            <TodoList
-                                dispatch={dispatch}
-                                todos={todos}
-                                title="Uncompleted"
-                            />
-                        )
-                }
-            </Container>
+            <div style={{backgroundColor: "whitesmoke"}}>
+                <Container>
+                    {
+                        (todo.todos.length === 0) ?
+                            (
+                                <div
+                                    style={{
+                                        backgroundColor: "whitesmoke",
+                                        minHeight: "93vh",
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        justifyContent: "center",
+                                        alignItems: "center"
+                                    }}>
+                                    <Typography variant="h4">
+                                        Don't waste your life.
+                                    </Typography>
+                                    <Button variant="text" size="large">
+                                        <Link to="/create">Create a todo</Link>
+                                    </Button>
+                                </div>
+                            ) : (
+                                <TodoList
+                                    dispatch={dispatch}
+                                    todos={todos}
+                                    title="Uncompleted"
+                                />
+                            )
+                    }
+                </Container>
+            </div>
         </Layout>
     )
 }

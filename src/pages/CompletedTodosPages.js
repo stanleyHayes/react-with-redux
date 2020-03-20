@@ -18,28 +18,10 @@ function CompletedTodosPage(props) {
 
     return (
         <Layout>
-            <Container>
-                {
-                    (todo.todos.length > 0 && todos.length === 0) ? (
-                            <div
-                                style={{
-                                    backgroundColor: "whitesmoke",
-                                    minHeight: "93vh",
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    justifyContent: "center",
-                                    alignItems: "center"
-                                }}>
-                                <Typography variant="h5" style={{textAlign: "center"}}>
-                                    Come on complete some tasks
-                                </Typography>
-                                <Typography variant="body2" style={{textAlign: "center"}}>
-                                    You have {todos.length} uncompleted tasks
-                                </Typography>
-                            </div>
-                        ) :
-                        (todos.length === 0) ?
-                            (
+            <div style={{backgroundColor: "whitesmoke"}}>
+                <Container>
+                    {
+                        (todo.todos.length > 0 && todos.length === 0) ? (
                                 <div
                                     style={{
                                         backgroundColor: "whitesmoke",
@@ -49,23 +31,43 @@ function CompletedTodosPage(props) {
                                         justifyContent: "center",
                                         alignItems: "center"
                                     }}>
-                                    <Typography variant="h4">
-                                        Don't waste your life.
+                                    <Typography variant="h5" style={{textAlign: "center"}}>
+                                        Come on complete some tasks
                                     </Typography>
-                                    <Button variant="text" size="large">
-                                        <Link to="/create">Create a todo</Link>
-                                    </Button>
+                                    <Typography variant="body2" style={{textAlign: "center"}}>
+                                        You have {todos.length} uncompleted tasks
+                                    </Typography>
                                 </div>
-                            ) : (
-                                <TodoList
-                                    dispatch={dispatch}
-                                    todos={todos}
-                                    title="Completed"
-                                />
+                            ) :
+                            (todos.length === 0) ?
+                                (
+                                    <div
+                                        style={{
+                                            backgroundColor: "whitesmoke",
+                                            minHeight: "93vh",
+                                            display: "flex",
+                                            flexDirection: "column",
+                                            justifyContent: "center",
+                                            alignItems: "center"
+                                        }}>
+                                        <Typography variant="h4">
+                                            Don't waste your life.
+                                        </Typography>
+                                        <Button variant="text" size="large">
+                                            <Link to="/create">Create a todo</Link>
+                                        </Button>
+                                    </div>
+                                ) : (
+                                    <TodoList
+                                        dispatch={dispatch}
+                                        todos={todos}
+                                        title="Completed"
+                                    />
 
-                            )
-                }
-            </Container>
+                                )
+                    }
+                </Container>
+            </div>
         </Layout>
     )
 }

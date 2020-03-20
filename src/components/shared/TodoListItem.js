@@ -43,6 +43,7 @@ function TodoListItem({todo, dispatch}) {
 
     return (
         <ListItem divider={true}>
+
             <ListItemAvatar>
                 <ListItemIcon>
                     {(completed) ?

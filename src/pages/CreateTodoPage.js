@@ -10,9 +10,11 @@ function CreateTodoPage(props) {
 
     return (
         <Layout>
-            <Container>
-                <CreateTodoForm dispatch={dispatch}/>
-            </Container>
+            <div style={{backgroundColor: "white"}}>
+                <Container>
+                    <CreateTodoForm dispatch={dispatch}/>
+                </Container>
+            </div>
         </Layout>
     )
 }

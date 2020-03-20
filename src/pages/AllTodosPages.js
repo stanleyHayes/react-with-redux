@@ -25,35 +25,36 @@ function AllTodosPage(props) {
 
     return (
         <Layout>
-            <Container>
-                {
-                    (todos.length === 0) ?
-                        (
-                            <div
-                                style={{
-                                    backgroundColor: "whitesmoke",
-                                    minHeight: "93vh",
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    justifyContent: "center",
-                                    alignItems: "center"
-                                }}>
-                                <Typography variant="h4">
-                                    Don't waste your life.
-                                </Typography>
-                                <Button variant="text" size="large">
-                                    <Link to="/create">Create a todo</Link>
-                                </Button>
-                            </div>
-                        ) : (
-                            <TodoList
-                                dispatch={dispatch}
-                                todos={todos}
-                                title="All Todo"
-                            />
-                        )
-                }
-            </Container>
+            <div style={{backgroundColor: "whitesmoke"}}>
+                <Container>
+                    {
+                        (todos.length === 0) ?
+                            (
+                                <div
+                                    style={{
+                                        minHeight: "93vh",
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        justifyContent: "center",
+                                        alignItems: "center"
+                                    }}>
+                                    <Typography variant="h4">
+                                        Don't waste your life.
+                                    </Typography>
+                                    <Button variant="text" size="large">
+                                        <Link to="/create">Create a todo</Link>
+                                    </Button>
+                                </div>
+                            ) : (
+                                <TodoList
+                                    dispatch={dispatch}
+                                    todos={todos}
+                                    title="All Todo"
+                                />
+                            )
+                    }
+                </Container>
+            </div>
         </Layout>
     )
 }

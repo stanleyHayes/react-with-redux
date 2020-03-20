@@ -9,12 +9,14 @@ import CompletedTodosPage from "./pages/CompletedTodosPages";
 import UncompletedTodosPage from "./pages/UncompletedTodosPage";
 import AllTodosPages from "./pages/AllTodosPages";
 import CreateTodoPage from "./pages/CreateTodoPage";
+import MorePage from "./pages/more/MorePage";
 
 function App() {
     return (
         <Provider store={store}>
             <BrowserRouter>
                 <Switch>
+
                     <Route path="/completed">
                         <CompletedTodosPage/>
                     </Route>
@@ -27,10 +29,14 @@ function App() {
                         <CreateTodoPage/>
                     </Route>
 
+                    <Route path="/more">
+                        <MorePage/>
+                    </Route>
 
                     <Route path="/">
                         <AllTodosPages/>
                     </Route>
+
                 </Switch>
             </BrowserRouter>
         </Provider>
